@@ -7,7 +7,7 @@ import java.util.Scanner;
  * Last edited on 5/8/2017 12:42 PM
  */
 public class Digits {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Error{
         //Declare variables
         int input, result;
 
@@ -20,7 +20,10 @@ public class Digits {
 
         //New line for aesthetics
         System.out.println();
-
+        if(input > 999)
+            throw new Error("Input has to be less than 1000");
+        if(input < 0)
+            throw new Error("Input has to be greater than 0");
         //calculate result
         result = input % 10 + input / 10 % 10 + input / 100 % 10;
 
