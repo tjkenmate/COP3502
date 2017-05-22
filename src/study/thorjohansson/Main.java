@@ -8,7 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
-import study.thorjohansson.module2.CostOfDriving;
+//import study.thorjohansson.module2.CostOfDriving;
 
 public class Main extends Application{
     @Override
@@ -44,8 +44,8 @@ public class Main extends Application{
         }
     }
 
-    public static void main(String[] args) {
-        CostOfDriving.main(args);
-    }
+    //public static void main(String[] args) {
+        //CostOfDriving.main(args);
+    //}
 
 }
