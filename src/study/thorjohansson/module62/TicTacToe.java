@@ -20,11 +20,11 @@ public class TicTacToe {
                 {' ', ' ', ' '},
                 {' ', ' ', ' '}};
         do{
-            print2DArray(board, "", "|", "", "-------------\n");
+            print2DArray(board, "", "|", "", "-------\n");
             state = move(playerXTurn, board);
             playerXTurn = turnSwitch(playerXTurn);
-        } while (state > 0);
-        print2DArray(board, "", "|", "", "-------------\n");
+        } while (state == 0);
+        print2DArray(board, "", "|", "", "-------\n");
         switch (state) {
             case 1: print("X player won");
             case 2: print("O player won");
@@ -42,16 +42,23 @@ public class TicTacToe {
             i = in.nextByte();
             print("Enter a column (0, 1, or 2) for player X: ", false);
             j = in.nextByte();
+            if(!isValid(board[i][j])) {
+                print("Input is not valid");
+                return move(playerXTurn, board);
+            }
+            board[i][j] = 'X';
         } else{
             print("Enter a row (0, 1, or 2) for player O: ", false);
             i = in.nextByte();
             print("Enter a column (0, 1, or 2) for player O: ", false);
             j = in.nextByte();
+            if(!isValid(board[i][j])) {
+                print("Input is not valid");
+                return move(playerXTurn, board);
+            }
+            board[i][j] = 'O';
         }
-        if(!isValid(board[i][j])) {
-            print("Input is not valid");
-            return move(playerXTurn, board);
-        }
+
         return gameState(board);
 
     }
