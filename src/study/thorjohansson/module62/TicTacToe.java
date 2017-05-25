@@ -53,6 +53,7 @@ public class TicTacToe {
             return move(playerXTurn, board);
         }
         return gameState(board);
+
     }
 
     public static byte gameState(char[][] board) {
