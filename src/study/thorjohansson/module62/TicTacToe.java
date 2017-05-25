@@ -42,7 +42,7 @@ public class TicTacToe {
             i = in.nextByte();
             print("Enter a column (0, 1, or 2) for player X: ", false);
             j = in.nextByte();
-            if(!isValid(board[i][j])) {
+            if(i > 2 && j >2 && !isValid(board[i][j])) {
                 print("Input is not valid");
                 return move(playerXTurn, board);
             }
@@ -52,13 +52,12 @@ public class TicTacToe {
             i = in.nextByte();
             print("Enter a column (0, 1, or 2) for player O: ", false);
             j = in.nextByte();
-            if(!isValid(board[i][j])) {
+            if(i > 2 && j >2 && !isValid(board[i][j])) {
                 print("Input is not valid");
                 return move(playerXTurn, board);
             }
             board[i][j] = 'O';
         }
-
         return gameState(board);
 
     }
